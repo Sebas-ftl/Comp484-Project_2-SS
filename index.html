@@ -11,43 +11,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
     <!-- Links -->
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 
   </head>
 
   <!-- Body -->
   <body>
-    <header>
-      <h1>
-        This is your Giga Pet
-      </h1>
-    </header>
 
-    <main>
-      <section class="pet-image-container">
-         <!-- Replace pet image with your own pet image -->
-        <img class="pet-image" src="">
+    <!-- Menu screen -->
+    <div id="menu">
+      <section class="card">
+        <!-- header -->
+        <header>
+          <h1>Main Menu</h1>
+        </header>
+
+        <!-- body -->
+        <main>
+          <section id="info">
+            <h2>Create your Giga Pet</h2>
+            <label>Name: </label>
+            <input type="text" id="petName">
+            <br>
+            <small>
+              Default name: Daround
+            </small>
+          </section>
+            <button id="start" onclick="startGame()">Start Game</button>
+        </main>
       </section>
-      <section class="dashboard">
-        <div>Name: <strong><span class="name"></span></strong></div>
-        <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
-        <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
-        <div class="button-container">
-          <button class="treat-button">
-            Treat
-          </button>
-          <button class="play-button">
-            Play
-          </button>
-          <button class="exercise-button">
-            Exercise
-          </button>
-        </div>
-      </section>
+    </div>
+
+    <!-- game screen -->
+    <div id="game">
+      <section class="card">
+        <header>
+          <h1>
+            This is your Giga Pet
+          </h1>
+        </header>
+
+        <main>
+          <section class="pet-image-container">
+            <!-- Replace pet image with your own pet image -->
+            <img class="pet-image" src="">
+          </section>
+          <section class="dashboard">
+            <div>Name: <strong><span class="name"></span></strong></div>
+            <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
+            <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+            <div class="button-container">
+              <button class="treat-button">
+                Treat
+              </button>
+              <button class="play-button">
+                Play
+              </button>
+              <button class="exercise-button">
+                Exercise
+              </button>
+            </div>
+          </section>
+        </section>
+    </div>
+    
+    <script src="script.js" defer></script>
     </main>
 
     <!-- Your web-app is https, so your scripts need to be too -->

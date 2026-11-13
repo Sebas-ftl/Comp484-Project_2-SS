@@ -1,10 +1,44 @@
+/* 
+Color Pallet
+
+BACKGROUND: #2F2235
+Color 1: #3F3244
+Color 1: #60495A
+Color 1: #A9ACA9
+Color 1: #BFC3BA
+*/
 
 * {
     box-sizing: border-box;
   }
-  html {
 
+  /* Global */
+  html {
+    background-color: #2F2235;
   }
+
+  .card {
+    background-color: #BFC3BA;
+    width:75dvw;
+    height: 300px;
+    border-style: dashed;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* Menu */
+#info {
+  background-color: #A9ACA9;
+  padding: 10px 40px;
+}
+
+#start {
+  margin: 30px;
+  padding: 10px;
+}
+
+  /* Game */
+
 
   body {
     font-family: helvetica, arial, sans-serif;

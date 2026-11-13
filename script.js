@@ -16,14 +16,14 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
-  
-
-  
-    
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"My Pet Name", weight:"??", happiness:"??"};
+    var pet_info = {
+      name:"My Pet Name", 
+      weight:"??", 
+      happiness:"??"
+    };
   
     function clickedTreatButton() {
       // Increase pet happiness
@@ -58,4 +58,36 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.weight').text(pet_info['weight']);
       $('.happiness').text(pet_info['happiness']);
     }
-  
+
+    // Hides game
+    (function(){
+      const div = document.getElementById("game");
+      div.style.display = "none";
+    }())
+
+    // game start
+    function startGame() {
+      // hides menu screen
+      const menuscreen = document.getElementById("menu");
+      menuscreen.style.display = "none";
+
+      // Creates pet with given name or default
+      const input = document.getElementById("petName");
+      var name = input.value;
+
+      if (name === ""){
+        name = "Daround";
+      }
+
+      pet_info.name = name;
+      pet_info.weight = 50;
+      pet_info.happiness = 0;
+      updatePetInfoInHtml();
+
+      // console.log(name); testing
+
+      // shows game screen
+      const gamescreen = document.getElementById("game");
+      gamescreen.style.display = "block";
+
+    }
