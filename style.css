@@ -2,7 +2,10 @@
 * {
     box-sizing: border-box;
   }
-  
+  html {
+
+  }
+
   body {
     font-family: helvetica, arial, sans-serif;
     margin: 25px;
