@@ -22,6 +22,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     var pet_info = {
       name:"My Pet Name", 
       weight:"??", 
+      energy:"??",
       happiness:"??"
     };
   
@@ -57,6 +58,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.name').text(pet_info['name']);
       $('.weight').text(pet_info['weight']);
       $('.happiness').text(pet_info['happiness']);
+      $('.energy').text(pet_info['energy']);
     }
 
     // Hides game
@@ -82,9 +84,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.name = name;
       pet_info.weight = 50;
       pet_info.happiness = 0;
+      pet_info.energy = 100;
       updatePetInfoInHtml();
-
-      // console.log(name); testing
 
       // shows game screen
       const gamescreen = document.getElementById("game");
