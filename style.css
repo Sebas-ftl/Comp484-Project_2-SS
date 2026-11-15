@@ -1,30 +1,44 @@
-/* 
-Color Pallet
-
-BACKGROUND: #2F2235
-Color 1: #3F3244
-Color 1: #60495A
-Color 1: #A9ACA9
-Color 1: #BFC3BA
-*/
 
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  /* Global */
-  html {
-    background-color: #2F2235;
-  }
+/* Global */
+html {
+  background-color: rgb(30 40 53);
+  text-align: center;
+}
 
-  .card {
-    background-color: #BFC3BA;
-    width:75dvw;
-    height: 300px;
-    border-style: dashed;
-    text-align: center;
-    margin: 0 auto;
-  }
+main {
+  display:flex;
+  flex-direction: column;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid black;
+}
+
+.card {
+  background-color: #BFC3BA;
+  width:75dvw;
+  border-style: dashed;
+  text-align: center;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+h1 {
+  font-weight: bold;
+  color: #000;
+}
+
+footer {
+  
+  margin: 15px auto;
+}
+
 
   /* Menu */
 #info {
@@ -37,26 +51,44 @@ Color 1: #BFC3BA
   padding: 10px;
 }
 
+
   /* Game */
+.pet-image-container {
+  background-image: url("images/background-theme.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 90%;
+  aspect-ratio: 4/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pet-image {
+  width: 60%;
+  height: auto;
+  animation: bounce 1.4s ease-in-out infinite;
+}
+
+/* idle animation for pet */
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
 
+  /* text */
   body {
     font-family: helvetica, arial, sans-serif;
     margin: 25px;
-  }
-  
-  main {
-    display:block;
-    height:175px;
-  }
-  
-  header {
-    border-bottom: 1px solid black;
-  }
-  
-  h1 {
-    font-weight: bold;
-    color: #000;
   }
   
   .bold {
@@ -67,27 +99,12 @@ Color 1: #BFC3BA
     max-width: 600px;
   }
   
-  
   li {
     margin-bottom: 5px;
   }
   
-  footer {
-    padding-top: 25px;
-    border-top: 1px solid black;
-  }
-  
-  footer a {
-    float:left;
-    margin:5px;
-  }
-  
-  .pet-image {
-    height:250px;
-  }
-  
   .dashboard div {
-    display:block;
+    display:flow;
   }
   
   .pet-image-container {
@@ -98,6 +115,7 @@ Color 1: #BFC3BA
   .dashboard {
     float:left;
     padding:20px;
+    border:  2px solid green;
   }
   
   .button-container {
@@ -110,10 +128,11 @@ Color 1: #BFC3BA
       text-align: center;
       display: inline-block;
       float: left;
-    font-size:15px;
+    font-size:20px;
+    padding: 5px;
     background-color: #1e2835;
     border-color: #404853;
     cursor:pointer;
-    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
+    background-image: linear-gradient(to bottom,rgba(109, 177, 230,.6)0%,rgba(44, 75, 161,.5)66%);
     color: #fafafa;
   }

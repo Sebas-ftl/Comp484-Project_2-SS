@@ -16,6 +16,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
+    $('.sleep-button').click(clickedSleepButton);
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
@@ -26,31 +27,88 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       happiness:"??"
     };
   
+    // treat functionality
     function clickedTreatButton() {
-      // Increase pet happiness
-      // Increase pet weight
+      pet_info.happiness += 3;
+      pet_info.weight += 2;
+      $(".pet-image").slideUp(200, function() {
+        $(".pet-image").attr("src", "images/Darhound_eating.png");
+        $(".pet-image").slideDown(200);
+
+        setTimeout(function() {
+          $(".pet-image").attr("src", "images/daround.png");
+        }, 2000);
+      })
+
+      if (pet_info.happiness >= 100) {
+        pet_info.happiness = 100;
+      }
       checkAndUpdatePetInfoInHtml();
     }
     
+    // play functionality
     function clickedPlayButton() {
-      // Increase pet happiness
-      // Decrease pet weight
+      if (pet_info.energy-5 <= -1 || pet_info.weight < 30 || pet_info.happiness+4 >= 100) {
+        return;
+      }
+      else {
+        pet_info.happiness += 4;
+        pet_info.weight -= 2;
+        pet_info.energy -= 5;
+
+        $(".pet-image").slideUp(200, function() {
+          $(".pet-image").attr("src", "images/Darhound_playing.png");
+          $(".pet-image").slideDown(200);
+
+          setTimeout(function() {
+            $(".pet-image").attr("src", "images/daround.png");
+          }, 2000);
+        })
+        }
       checkAndUpdatePetInfoInHtml();
     }
     
+    // exercise functionality
     function clickedExerciseButton() {
       // Decrease pet happiness
       // Decrease pet weight
+      if(pet_info.happiness-7 <= -1 || pet_info.weight < 30 || pet_info.energy-15 <= -1) {
+        return;
+      }
+      else {
+        pet_info.happiness -=7;
+        pet_info.weight -=8;
+        pet_info.energy -=15;
+        $(".pet-image").slideUp(200, function() {
+          $(".pet-image").attr("src", "images/Darhound_working.png");
+          $(".pet-image").slideDown(200);
+
+          setTimeout(function() {
+            $(".pet-image").attr("src", "images/daround.png");
+          }, 2000);
+        })
+      }
+      
+      checkAndUpdatePetInfoInHtml();
+    }
+
+    // sleep functionality
+    function clickedSleepButton() {
+      pet_info.energy = 100;
+      $(".pet-image").slideUp(200, function() {
+        $(".pet-image").attr("src", "images/Darhound_sleeping.png");
+        $(".pet-image").slideDown(200);
+
+        setTimeout(function() {
+          $(".pet-image").attr("src", "images/daround.png");
+        }, 3000);
+      })
       checkAndUpdatePetInfoInHtml();
     }
   
-    function checkAndUpdatePetInfoInHtml() {
-      checkWeightAndHappinessBeforeUpdating();  
+    // update user pet display
+    function checkAndUpdatePetInfoInHtml() { 
       updatePetInfoInHtml();
-    }
-    
-    function checkWeightAndHappinessBeforeUpdating() {
-      // Add conditional so if weight is lower than zero.
     }
     
     // Updates your HTML with the current values in your pet_info object
@@ -81,6 +139,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         name = "Daround";
       }
 
+      // loads into pet object
       pet_info.name = name;
       pet_info.weight = 50;
       pet_info.happiness = 0;
