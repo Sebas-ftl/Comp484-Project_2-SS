@@ -1,5 +1,6 @@
-View Site Here: 
-'''
+View Site Here: https://sebas-ftl.github.io/Comp484-Project_2-SS/
+
+
 Picked Jquery
 // slideUp()
 // https://api.jquery.com/slideUp/
@@ -9,4 +10,4 @@ Picked Jquery
 
 slideup() - takes selected element and collapses it, this also effectively hides that element
 slideDown() - takes a selected element and expands it, making it look like its reapearing
-'''
+
